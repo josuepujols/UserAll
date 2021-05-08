@@ -1,0 +1,37 @@
+
+<section id="login-container">
+    <form id="login-form" class="row g-3">
+      <div *ngIf="notification" class="alert text-center alert-danger alert-dismissible fade show" role="alert">
+        Debe llenar todos los campos.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div *ngIf="user_alert" class="alert text-center alert-danger alert-dismissible fade show" role="alert">
+        Los datos ingresados no son correctos.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        <h1 id="title-login" class="text-black text-center title">Loggin</h1>
+        <div id="div-border">
+            <div class="col-md-4 input">
+                <label for="inputEmail4" class="form-label"></label>
+                <input (input)="chenge_border_email()" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required type="email" class="form-control" id="inputEmail4" placeholder="Correo">
+              </div>
+              <div class="col-md-4 input">
+                <label for="inputPassword4" class="form-label"></label>
+                <input (input)="chenge_border_password()" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+              </div>
+              <div class="col-md-4 input">
+                <input (click)="change_control()" id="check" type="checkbox">
+                <label id="text-check" for="check" class="form-label">Mostrar contraseña</label>
+              </div>
+              <div class="col-12 input">
+                <button (click)="iniciar_sesion()" id="boton-login" type="submit" class="btn btn-primary">Iniciar Sesion</button>
+              </div>
+              <div id="text-container">
+                <span class="text-center">¿No tienes cuenta?</span>
+                <a (click)="go_register()" class="text-center">Registrate</a>
+              </div>
+        </div>
+      </form>
+</section>
+
+

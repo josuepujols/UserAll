@@ -1,0 +1,27 @@
+
+<section id="register-container">
+    <form #form class="col-12" id="form-register"> 
+        <div class="div-border">
+            <h1 id="title-register" class="text-black text-center title">Registrarse</h1>
+            <div class="mb-3 col-md-12">
+                <input [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="mb-3 col-md-12">
+                <input [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+            <div class="mb-3 col-md-12">
+                <input [(ngModel)]="correo" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="correo" placeholder="Correo">
+            </div>
+            <div class="mb-3 col-md-12">
+                <input [(ngModel)]="password_1" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="password_1" placeholder="Contraseña">
+            </div>
+            <div class="mb-3 col-md-12">
+                <input [(ngModel)]="password_2" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="password_2" placeholder="Confirmar ontraseña">
+            </div>
+            <div class="col-12 input">
+                <button (click)="register_user(form)" id="boton-register" type="submit" class="btn btn-primary">Registrarme</button>
+              </div>
+        </div>
+    </form>
+</section>
+

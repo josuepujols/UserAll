@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <img id="icon" class="img-fluid" alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"/>
+      <a id="logo" class="text-white navbar-brand">AllUsers</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul id="user" class="navbar-nav">
+          
+          <li class="nav-item dropdown">
+            <a class="text-white nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{this.objeto.nombre + " " + this.objeto.apellido}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a (click)="cerrar_sesion()" class="dropdown-item" href="#">Cerrar Sesion</a></li>
+              <li><a (click)="delete_user()" class="dropdown-item" href="#">Eliminar Usuario</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<section id="home-container">
+    <h2 id="home-title" class="text-center mt-5">Usuarios</h2>
+    <div id="table-container" class="container-fluid">
+        <table id="table" class="table table-bordered bg-danger">
+            <thead class="text-black">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+              </tr>
+            </thead>
+            <tbody class="text-white">
+              <tr *ngFor="let dato of this.users; let indice = index">
+                <th scope="row">{{indice}}</th>
+                <td>{{dato.nombre}}</td>
+                <td>{{dato.apellido}}</td>
+                <td>{{dato.correo}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</section>
+
+
